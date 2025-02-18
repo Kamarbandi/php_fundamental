@@ -20,27 +20,22 @@ class Solution
      */
     function deleteMiddle($head)
     {
-        // Если в списке только один элемент, возвращаем null
         if ($head === null || $head->next === null) {
             return null;
         }
 
-        // Два указателя: медленный и быстрый
         $slower = $head;
         $faster = $head;
-        $previous = null; // Узел перед медленным указателем
+        $previous = null;
 
-        // Пока быстрый указатель не достигнет конца списка
         while ($faster !== null && $faster->next !== null) {
             $previous = $slower;
-            $slower = $slower->next;      // Медленный указатель движется на 1 шаг
-            $faster = $faster->next->next; // Быстрый указатель движется на 2 шага
+            $slower = $slower->next;
+            $faster = $faster->next->next;
         }
 
-        // Удаляем средний узел (slow), изменяя ссылку предыдущего узла
         $previous->next = $slower->next;
 
-        // Возвращаем изменённый список
         return $head;
     }
 
