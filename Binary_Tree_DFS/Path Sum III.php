@@ -1,10 +1,15 @@
 <?php
-class TreeNode {
+
+// https://leetcode.com/problems/path-sum-iii/solutions/6462513/dfs-with-prefix-sum-approaches-2ms-100-beats-php/
+
+class TreeNode
+{
     public $val = null;
     public $left = null;
     public $right = null;
 
-    function __construct($val = 0, $left = null, $right = null) {
+    function __construct($val = 0, $left = null, $right = null)
+    {
         $this->val = $val;
         $this->left = $left;
         $this->right = $right;
@@ -12,13 +17,15 @@ class TreeNode {
 }
 
 
-class Solution {
+class Solution
+{
     /**
      * @param TreeNode $root
      * @param Integer $targetSum
      * @return Integer
      */
-    function pathSum($root, $targetSum) {
+    function pathSum($root, $targetSum)
+    {
         // Hash map to store prefix sums
         $prefixSumCounts = [0 => 1];
         return $this->countPaths($root, $targetSum, 0, $prefixSumCounts);
@@ -33,7 +40,8 @@ class Solution {
      * @param array &$prefixSumCounts - Hash map of prefix sums.
      * @return int - Number of paths with sum $targetSum.
      */
-    private function countPaths($node, $targetSum, $currentSum, &$prefixSumCounts) {
+    private function countPaths($node, $targetSum, $currentSum, &$prefixSumCounts)
+    {
         if ($node === null) {
             return 0;
         }
