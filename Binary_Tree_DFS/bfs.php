@@ -1,6 +1,7 @@
 <?php
 
-function bfs($graph, $start) {
+function bfs($graph, $start)
+{
     $visited = []; // Array for visited vertices
     $queue = new SplQueue(); // Queue for vertices
 
