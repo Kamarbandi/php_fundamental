@@ -22,17 +22,17 @@ class Solution {
      */
     function searchBST($root, $val) {
         // if tree is empty or the current node is equal searched value
-       if($root == null || $root->val == $val) {
+        if($root == null || $root->val == $val) {
             return $root;
-       }
+        }
 
-       // If the value being sought is less than the value of the current node, we search in the left subtree
-       if($root->val < $val) {
-           return $this->searchBST($root->left, $val);
-       }
+        // If the value being sought is less than the value of the current node, we search in the left subtree
+        if($root->val < $val) {
+            return $this->searchBST($root->left, $val);
+        }
 
-       // If the value being sought is greater than the value of the current node, we search in the right subtree
-       return $this->searchBST($root->right, $val);
+        // If the value being sought is greater than the value of the current node, we search in the right subtree
+        return $this->searchBST($root->right, $val);
     }
 }
 
